@@ -1,4 +1,4 @@
-// Policy Role
+// Policy Role for Code Deploy
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -19,7 +19,7 @@
   ]
 }
 
-// Policy Trust
+// Policy Trust for Code Deploy
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -37,7 +37,7 @@
   ]
 }
 
-// Instance Role
+// Instance Role for EC2 Instance
 { 
     "Version": "2012-10-17", 
     "Statement": [   
