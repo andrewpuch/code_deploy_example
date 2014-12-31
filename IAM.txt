@@ -1,4 +1,4 @@
-// Setup for policy.
+// Policy Role
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -19,7 +19,7 @@
   ]
 }
 
-// Setup for trust
+// Policy Trust
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -35,4 +35,19 @@
       "Action": "sts:AssumeRole"
     }
   ]
+}
+
+// Instance Role
+{ 
+    "Version": "2012-10-17", 
+    "Statement": [   
+      {     
+          "Action": [       
+              "s3:Get*",       
+              "s3:List*"     
+          ],     
+          "Effect": "Allow",     
+          "Resource": "*"   
+      } 
+    ]
 }
