@@ -1,27 +1,36 @@
 Instructions
 ============
-1.) When server is booted run the following commands as root.
 
-yum -y update
+Look for the video tutorial on [YouTube](https://www.youtube.com/watch?v=qZa5JXmsWZs) for the full instructions.
 
-yum install -y aws-cli
+#### IAM Roles
 
-cd /home/ec2-user
+Create two IAM roles with custom policies using the **IAM.txt** file.
 
-2.) Here you will setup your AWS access, secret, and region.
+#### EC2 Instance
 
-aws configure 
+1. When server is booted run the following commands as root.
 
-aws s3 cp s3://aws-codedeploy-us-east-1/latest/install . --region us-east-1
+  * `yum -y update`
 
-chmod +x ./install
+  * `yum install -y aws-cli`
 
-3.) This is simply a quick hack to get the agent running faster.
+  *  `cd /home/ec2-user`
 
-sed -i "s/sleep(.*)/sleep(10)/" install 
+2. Here you will setup your AWS access, secret, and region.
 
-./install auto
+  * `aws configure`
 
-4.) Verify it is running.
+  *  `aws s3 cp s3://aws-codedeploy-us-east-1/latest/install . --region us-east-1`
 
-service codedeploy-agent status 
+  *  `chmod +x ./install`
+
+3. This is simply a quick hack to get the agent running faster.
+
+  *  `sed -i "s/sleep(.*)/sleep(10)/" install`
+
+  *  `./install auto`
+
+4. Verify it is running.
+
+  * `service codedeploy-agent status`
